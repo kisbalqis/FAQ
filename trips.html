@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Trip</title>
+    <style>
+
+      /* accordion */
+      .accordion{
+            width: 98%;
+            /* margin-bottom: 20px;
+            margin-left: 20px; */
+        }
+      .accordion .card {
+          background: none;
+          border: none;
+          padding-left: 20px;
+        }
+        .accordion .card .card-header {
+          background: none;
+          border: none;
+          padding: .4rem 1rem;
+          font-family: "Roboto", sans-serif;
+        }
+        .accordion .card-header h2 span {
+          float: left;
+          margin-top: 10px;
+        }
+        .accordion .card-header .btn {
+          color: #2f2f31;
+          font-size: 1.04rem;
+          text-align: left;
+          position: relative;
+          font-weight: 500;
+          padding-left: 2rem;
+        }
+        .accordion .card-header i {
+          font-size: 1.2rem;
+          font-weight: bold;
+          position: absolute;
+          left: 0;
+          top: 9px;
+        }
+        .accordion .card-header .btn:hover {
+          color: #73bb2b;
+        }
+        .accordion .card-body {
+          color: #324353;
+          padding: 0.5rem 3rem;
+        }
+        .page-title {
+          margin: 3rem 0 3rem 1rem;
+          font-family: "Roboto", sans-serif;
+          position: relative;
+        }
+        .page-title::after {
+          content: "";
+          width: 80px;
+          position: absolute;
+          height: 3px;
+          border-radius: 1px;
+          background: #73bb2b;
+          left: 0;
+          bottom: -15px;
+        }
+        .accordion .highlight .btn {
+          color: #74bd30;
+        }
+        .accordion .highlight i {
+          transform: rotate(180deg);
+        }
+      /* akhir accordion */
+      .icon{
+            position: fixed;
+            right: 15px;
+            bottom: 20px;
+            border: none;
+             
+        }
+        .container-lg{
+          padding: 10px;
+        }
+        .breadcrumb{
+          padding: 20px;
+          margin-left: 10px;
+          font-family: "Roboto", sans-serif;
+        }
+    </style>
+      <script>
+        $(document).ready(function(){
+          // Add minus icon for collapse element which is open by default
+          $(".collapse.show").each(function(){
+            $(this).prev(".card-header").addClass("highlight");
+          });
+          
+          // Highlight open collapsed element 
+          $(".card-header .btn").click(function(){
+            $(".card-header").not($(this).parents()).removeClass("highlight");
+            $(this).parents(".card-header").toggleClass("highlight");
+          });
+        });
+        </script>
+</head>
+<body>
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" style="color: #74bd30;">FAQ</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="user.html" style="color: #74bd30;">User</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Trip</li>
+              </ol>
+            </nav>
+
+            <h4><label class="m-3" id="book"><strong>1. HOW TO BOOK</strong></label></h4>
+          <div class="accordion" id="accordionExample">
+          
+            <div class="card">
+              <div class="card-header attracions_hash" id="headingOne">
+                <h2 class="clearfix mb-0">
+                  <a class="btn btn-link" data-toggle="collapse" data-target="#attracions" aria-expanded="true" aria-controls="collapseOne"><i class="fa fa-chevron-circle-down"></i> What Attracions are available on Tripwe?</a>									
+                </h2>
+              </div>
+              <div id="attracions" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">Tripwe offers 3 types of adventures: water adventure, land adventure, and sky adventure.
+                  <ul>
+                    <li>Water Adventure: Seadoo Safari, jetski, rafting, etc</li>
+                    <li>Land Adventure: offroad, camping, trekking, etc</li>
+                    <li>Sky Adventure: paragliding, etc</li>
+                  </ul></div>
+              </div>
+              </div>
+            
+            <div class="card">
+              <div class="card-header make_booking_hash" id="headingTwo">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#make_booking" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-circle-down"></i> How do I make a booking?</a>
+                </h2>
+              </div>
+              <div id="make_booking" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li> <i>Login</i> to your Tripwe account or if you don't have an account, please sign up first.</li>
+                    <li>On Tripwe home page, choose one of the three menus (Water, Land or Sky Adventure.) </li>
+                    <li>Browse the menu and choose a package</li>
+                    <li>Or you can also search for specific trips or packages on the Search feature or the Search bar on the Tripwe home page.</li>
+                    <li>Click Book on the Package Details page.</li>
+                    <li>You will be directed to payment and finish the booking. </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header make_booking_seadoo_hash" id="headingThree">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#make_booking_seadoo" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-chevron-circle-down"></i> How do I book a Seadoo Safari trip?</a>
+                </h2>
+              </div>
+              <div id="make_booking_seadoo" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li> <i>Login</i> to a Tripwe account or if you don't have a Tripwe account, please sign up first.</li>
+                    <li>On the Tripwe home page, click the Seadoo Safari menu. </li>
+                    <li>Specify the dock location, date and number of jet ski units click Search. Or you can use the Search feature on the Tripwe home page.</li>
+                    <li>○	Select the Seadoo Safari package you want from the search results to display Order Details, Total Price and Map information (to see the Seadoo Safari location)</li>
+                    <li>○	On the Seadoo Safari package details page, you can click Book to make an order.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header order_packages_hash" id="headingFour">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#order_packages" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i> Can I order 2 different packages on the same day?</a>
+                </h2>
+              </div>
+              <div id="order_packages" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body"> Of course you can, Trippers! While stock is available
+                </div>
+              </div>
+            </div>
+
+            <div class="card">    
+              <div class="card-header cities_tripwe_hash" id="headingFive">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#cities_tripwe" aria-expanded="false" aria-controls="collapseFive"><i class="fa fa-chevron-circle-down"></i> Which cities does Tripwe reach?</a>
+                </h2>
+              </div>
+              <div id="cities_tripwe" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body"> Currently, Tripwe is collaborating with several sport adventures in several cities in Indonesia spread across several provinces such as DKI Jakarta, West Java, Central Java, East Java, Makassar, Balikpapan, etc. For more details, please check on the Tripwe app.</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header change_my_order_hash" id="headingSix">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#change_my_order" aria-expanded="false" aria-controls="collapseSix"><i class="fa fa-chevron-circle-down"></i> can i change my order?</a>
+                </h2>
+              </div>
+              <div id="change_my_order" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body"> At this time you cannot change a paid order on Tripwe.</div>
+              </div>
+            </div>
+
+            
+
+          <h4><label class="m-3" id="howpay"><strong>2. HOW TO PAY: TRIPWEPAY, TRANSFER, CREDIT CARD</strong></label></h4>
+          <div class="card">
+            <div class="card-header payment_methods_hash" id="headingSeven">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#payment_methods" aria-expanded="false" aria-controls="collapseSeven"><i class="fa fa-chevron-circle-down"></i> How do I pay for the package I booked and what payment methods are available?</a>
+              </h2>
+            </div>
+            <div id="payment_methods" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+              <div class="card-body"> To pay for packages on Tripwe with each payment method, you can see the details here:
+
+                If you want to pay using TRIPWEPAY, follow these steps:
+                <ol>
+                  <li>Complete your order and process it to the payment step.</li>
+                  <li>Choose TripwePay as the payment method</li>
+                  <li>Enter your TripwePay  PIN (6 Digits).</li>
+                  <li>If the payment is successful, then you will get a notification on WhatsApp.</li>
+                </ol>
+           
+                If you want to make a payment using WIRE TRANSFER:
+                <ol>
+                  <li>Complete your order and process it to the payment step.</li>
+                  <li>Choose Bank Transfer payment method</li>
+                  <li>Information on the payment page will appear such as: Total Payment, Unique Code and Remaining Payment Time.</li>
+                  <li>Make a bank transfer via ATM or M-banking to BNI bank virtual account listed on the payment page. (Don't forget, transfer according to the number of orders that have been added with a unique code.)</li>
+                  <li>If the payment is successful, then you will get a notification on WhatsApp.</li>
+                </ol>
+        
+                If you want to make a payment using CREDIT CARD:
+                <ol>
+                  <li>Complete your order and process it to the payment step.</li>
+                  <li>Choose Credit Card as the payment method.</li>
+                  <li>Make sure your email on your profile account is filled.</li>
+                  <li>On the payment page, the Total Payment information will appear</li>
+                  <li>Complete the Name (according to the name on the Credit Card), Card Number, CVV Number and Card Expiration Date.</li>
+                  <li>Click Process Payment.</li>
+                  <li>Follow the payment flow according to your bank.</li>
+                </ol></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header amount_payment_hash" id="headingEight">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#amount_payment" aria-expanded="false" aria-controls="collapseEight"><i class="fa fa-chevron-circle-down"></i> What should I do if the payment info page has not copied the virtual account number and the nominal amount of the payment?</a>
+              </h2>
+            </div>
+            <div id="amount_payment" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+              <div class="card-body"> 
+              <ul>
+                <li>Click Invoice</li>
+                <li>Click Unpaid and then select according to the order category</li>
+                <li>Choose  the booking</li>
+                <li>Click Order Details</li>
+              </ul>
+                </div>
+            </div>
+          </div>
+
+          <h4><label class="m-3 judul"  id="confrimorder"><strong>3.	HOW TO CONFIRM AN ORDER</strong></label></h4>
+          <div class="card">
+            <div class="card-header confrim_myorder_hash" id="headingNine">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#confrim_myorder" aria-expanded="false" aria-controls="collapseNine"><i class="fa fa-chevron-circle-down"></i> What do I need to do to confirm my order?</a>
+              </h2>
+            </div>
+            <div id="confrim_myorder" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+              <div class="card-body"> You do not need to confirm the order manually because Tripwe has confirmed it through the system. However, if there is something else that needs to be confirmed, the merchant will contact the user directly.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header already_paid_hash" id="headingTen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#already_paid" aria-expanded="false" aria-controls="collapseTen"><i class="fa fa-chevron-circle-down"></i>  I have completed the payment, what should I do next?
+                  </a>
+              </h2>
+            </div>
+            <div id="already_paid" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+              <div class="card-body"> Come to the meeting location on the date and time listed on the invoice. Then, show the order QR code to the adventure operator on duty.
+                </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header order_fails_hash" id="headingEleven">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#order_fails" aria-expanded="false" aria-controls="collapseEleven"><i class="fa fa-chevron-circle-down"></i> If my order fails, will my balance be refunded?
+                 </a>
+              </h2>
+            </div>
+            <div id="order_fails" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+              <div class="card-body">  If you have paid an order using TripwePay or any other payment methods but failed, your money will be returned to your TripwePay account.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header order_history_hash" id="headingTwelve">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#order_history" aria-expanded="false" aria-controls="collapseTwelve"><i class="fa fa-chevron-circle-down"></i>	How do I view my order history on Tripwe?
+                 </a>
+              </h2>
+            </div>
+            <div id="order_history" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+              <div class="card-body"> The entire order history is in the invoice section of the menu.
+                </div>
+            </div>
+          </div>
+
+          <h4><label class="m-3 judul" id="vouchers"><strong>4. USE VOUCHERS</strong></label></h4>
+          <div class="card">
+            <div class="card-header use_voucher_hash" id="headingThirteen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#use_voucher" aria-expanded="false" aria-controls="collapseThirteen"><i class="fa fa-chevron-circle-down"></i> 
+                  How do I use the voucher?</a>
+              </h2>
+            </div>
+            <div id="use_voucher" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionExample">
+              <div class="card-body">
+                There are 2 ways, namely:
+                      <ol>
+                          <li>Click the selected voucher in the My Voucher menu and select the package, then checkout.</li>
+                          <li>On the payment page, enter the voucher code or select the available voucher, then checkout.</li>
+                      </ol>
+                </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header useMore_voucher_hash" id="headingFourteen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#useMore_voucher" aria-expanded="false" aria-controls="collapseFourteen"><i class="fa fa-chevron-circle-down"></i> Can I use more than one voucher?
+                 </a>
+              </h2>
+            </div>
+            <div id="useMore_voucher" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
+              <div class="card-body"> For now, 1 transaction can only use 1 voucher.           
+                </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header get_voucher_hash" id="headingFiveteen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#get_voucher" aria-expanded="false" aria-controls="collapseFiveteen"><i class="fa fa-chevron-circle-down"></i> How do I get a voucher?
+                 </a>
+              </h2>
+            </div>
+            <div id="get_voucher" class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordionExample">
+              <div class="card-body"> Vouchers can be obtained by purchasing vouchers which will be available in the near future on the Tripwe app.
+                </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header redeem_voucher_hash" id="headingSixteen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#redeem_voucher" aria-expanded="false" aria-controls="collapseSixteen"><i class="fa fa-chevron-circle-down"></i> Can the Voucher I get be redeemed?</a>
+              </h2>
+            </div>
+            <div id="redeem_voucher" class="collapse" aria-labelledby="headingSixteen" data-parent="#accordionExample">
+              <div class="card-body"> Vouchers in the Tripwe application cannot be cashed.
+                </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header buy_package_hash" id="headingSeventeen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#buy_package" aria-expanded="false" aria-controls="collapseSeventeen"><i class="fa fa-chevron-circle-down"></i> How do I find out the stock of the package I want to buy?</a>
+              </h2>
+            </div>
+            <div id="buy_package" class="collapse" aria-labelledby="headingSeventeen" data-parent="#accordionExample">
+              <div class="card-body"> The package stock can be found on the booking page, when you want to determine the booking date.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header have_vouchers_hash" id="headingEighteen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#have_vouchers" aria-expanded="false" aria-controls="collapseSEighteen"><i class="fa fa-chevron-circle-down"></i> How do I view the vouchers I have?</a>
+              </h2>
+            </div>
+            <div id="have_vouchers" class="collapse" aria-labelledby="headinEighteen" data-parent="#accordionExample">
+              <div class="card-body"> All active vouchers are in the My Voucher menu.
+                </div>
+            </div>
+          </div>
+      </div>
+      <button class="icon" style="background-color: transparent;"><a href="https://api.whatsapp.com/send?phone=6281212199543&text=Hi" target='_blank'><img src="https://tripwe.com/wp-content/uploads/2022/01/wa.png" style="width: 45px; 
+        height: 48px;" alt=""></a>
+    </div>
+    <script> 
+    //accordion open
+      if (location.hash !== null && location.hash !== "") { 
+          $(location.hash + ".collapse").collapse("show"); 
+          console.log(location.hash);
+            if(location.hash == "#attracions")
+            {
+              window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+              }
+            }
+            if(location.hash == "#make_booking")
+            {
+              $(".make_booking_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#make_booking_seadoo")
+            {
+              $(".make_booking_seadoo_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#order_packages")
+            {
+              $(".order_packages_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#cities_tripwe")
+            {
+              $(".cities_tripwe_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#change_my_order")
+            {
+              $(".change_my_order_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#payment_methods")
+            {
+              $(".payment_methods_hash").removeClass('highlight').addClass('highlight');
+            }
+
+            if(location.hash == "#amount_payment_hash")
+            {
+              $(".amount_payment_hash").removeClass('highlight').addClass('highlight');
+            }
+
+            if(location.hash == "#confrim_myorder")
+            {
+              $(".confrim_myorder_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#already_paid")
+            {
+              $(".already_paid_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#order_fails")
+            {
+              $(".order_fails_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#order_history")
+            {
+              $(".order_history_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#use_voucher")
+            {
+              $(".use_voucher_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#useMore_voucher")
+            {
+              $(".useMore_voucher_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#get_voucher")
+            {
+              $(".get_voucher_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#redeeem_voucher")
+            {
+              $(".redeeem_voucher_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#buy_package")
+            {
+              $(".buy_package_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#have_vouchers")
+            {
+              $(".have_vouchers_hash").removeClass('highlight').addClass('highlight');
+              window.onbeforeunload = function () {
+                window.scrollTo(9000, 9000);
+              }
+            }
+            
+      } 
+  </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   
+    <title>Merchant</title>
+    <style>
+      /* accordion */
+      .accordion{
+          width: 88%;   
+          /* height: 257px;
+          left: 20px;
+          right: 20px; */
+        }
+      .accordion .card {
+          background: none;
+          border: none;
+        }
+        .accordion .card .card-header {
+          background: none;
+          border: none;
+          padding: .4rem 1rem;
+          font-family: "Roboto", sans-serif;
+        }
+        .accordion .card-header h2 span {
+          float: left;
+          margin-top: 10px;
+        }
+        .accordion .card-header .btn {
+          color: #2f2f31;
+          font-size: 1.04rem;
+          text-align: left;
+          position: relative;
+          font-weight: 500;
+          padding-left: 2rem;
+        }
+        .accordion .card-header i {
+          font-size: 1.2rem;
+          font-weight: bold;
+          position: absolute;
+          left: 0;
+          top: 9px;
+        }
+        .accordion .card-header .btn:hover {
+          color: #73bb2b;
+        }
+        .accordion .card-body {
+          color: #324353;
+          padding: 0.5rem 3rem;
+        }
+        .page-title {
+          margin: 3rem 0 3rem 1rem;
+          font-family: "Roboto", sans-serif;
+          position: relative;
+        }
+        .page-title::after {
+          content: "";
+          width: 80px;
+          position: absolute;
+          height: 2px;
+          border-radius: 1px;
+          background: #73bb2b;
+          left: 0;
+          bottom: -15px;
+        }
+        .accordion .highlight .btn {
+          color: #74bd30;
+        }
+        .accordion .highlight i {
+          transform: rotate(180deg);
+          
+        }
+      /* akhir accordion */
+      .icon{
+            position: fixed;
+            right: 15px;
+            bottom: 20px;
+            border: none;
+             
+        }
+        .container-lg{
+          padding: 10px;
+        }
+        .breadcrumb{
+          padding: 20px;
+          margin-left: 10px;
+          font-family: "Roboto", sans-serif;
+        }
+    </style>
+    <script>
+      $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.show").each(function(){
+          $(this).prev(".card-header").addClass("highlight");
+        });
+        
+        // Highlight open collapsed element 
+        $(".card-header .btn").click(function(){
+          $(".card-header").not($(this).parents()).removeClass("highlight");
+          $(this).parents(".card-header").toggleClass("highlight");
+        });
+      });
+      </script>
+</head>
+<body>
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-12">
+        <nav aria-label="breadcrumb">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html" style="color: #73bb2b;">FAQ</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Merchant</li>
+              <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
+            </ol>
+          </nav>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header become_partner_hash" id="headingOne">
+              <h2 class="clearfix mb-0">
+                <a class="btn btn-link" data-toggle="collapse" data-target="#become_partner" aria-expanded="true" aria-controls="collapseOne"><i class="fa fa-chevron-circle-down"></i> How to become a partner of Tripwe Indonesia?</a>									
+              </h2>
+            </div>
+            <div id="become_partner" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">To become a merchant, you can fill out the form available on the Tripwe.com website or contact the BD Tripwe team via instagram or wa</div>
+            </div>
+            </div>
+          <div class="card">
+            <div class="card-header verification_partner_hash" id="headingTwo">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#verification_partner" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-circle-down"></i> If I have received verification and become a partner of Tripwe Indonesia, what should I do next?</a>
+              </h2>
+            </div>
+            <div id="verification_partner" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">If you have received verification to become a partner, the next step is to activate your account by logging into the Tripwe application and changing the password as desired and activating TripwePay by entering your PIN.
+              </div>
+            </div>
+            </div>
+          <div class="card">
+            <div class="card-header my_shop_hash" id="headingThree">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#my_shop" aria-expanded="false" aria-controls="my_shop"><i class="fa fa-chevron-circle-down"></i> Can I determine the opening and closing of my own shop?</a>                     
+              </h2>
+            </div>
+            <div id="my_shop" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body"> Yes, Admin can determine the schedule of holidays from the store in the Edit Store section.</div>
+            </div>
+            </div>
+          <div class="card">
+            <div class="card-header make_package_hash" id="headingFour">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#make_package" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i> How do I make a package in the Tripwe app?</a>                               
+              </h2>
+            </div>
+            <div id="make_package" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body"> <ol>
+                <li>Click Package according to your type of attraction.</li>
+                <li>Click the + (PLUS)  icon</li>
+                <li>Complete the package data information according to the page column listed</li>
+                <li>Click Submit</li>
+            </ol></div>
+            </div>
+            </div>
+          <div class="card">
+            <div class="card-header made_package_hash" id="headingFive">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#made_package" aria-expanded="false" aria-controls="collapseFive"><i class="fa fa-chevron-circle-down"></i> Can I edit the package I made in the Tripwe app?</a>                               
+              </h2>
+            </div>
+            <div id="made_package" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+              <div class="card-body"> 
+                Yes, Admin can edit packages made in the Tripwe app
+              </div>
+            </div>
+            </div>
+          <div class="card">
+            <div class="card-header admin_package_hash" id="headingSix">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#admin_package" aria-expanded="false" aria-controls="collapseSix"><i class="fa fa-chevron-circle-down"></i> If someone orders a package that the admin sells, what things should the admin prepare?</a>                               
+              </h2>
+            </div>
+            <div id="admin_package" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+              <div class="card-body"> 
+                Ensure the availability of the ordered package, and remind the user to show the QR when arriving at the meeting point location.
+              </div>
+            </div>
+          </div>      
+          <div class="card">
+            <div class="card-header checkin_tripwe_hash" id="headingSeven">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#checkin_tripwe" aria-expanded="false" aria-controls="collapseSeven"><i class="fa fa-chevron-circle-down"></i> What is check-in in the Tripwe application?</a>                               
+              </h2>
+            </div>
+            <div id="checkin_tripwe" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+              <div class="card-body"> 
+                Check-in is a QR Code scanning activity for customer orders.
+              </div>
+            </div>
+            </div>
+          <div class="card">
+            <div class="card-header immediately_complete_hash" id="headingEightn">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#immediately_complete" aria-expanded="false" aria-controls="collapseEight"><i class="fa fa-chevron-circle-down"></i> After the consumer checks-in, can the admin immediately complete the package?</a>                               
+              </h2>
+            </div>
+            <div id="immediately_complete" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+              <div class="card-body"> Yes, the admin can immediately complete the order after the user checks in.</div>
+            </div>
+            </div> 
+          <div class="card">
+            <div class="card-header hold_amount_hash" id="headingNine">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#hold_amount" aria-expanded="false" aria-controls="collapseNine"><i class="fa fa-chevron-circle-down"></i> After the order package is completed where will the funds be paid?</a>                               
+              </h2>
+            </div>
+            <div id="hold_amount" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+              <div class="card-body"> When the order is entered, the funds will be stored in the Hold Amount. Once the order is completed, the funds will be transferred to the store admin's TripwePay balance.</div>
+            </div>
+            </div>      
+          <div class="card">
+            <div class="card-header tripwepay_admin_hash" id="headingTen">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#tripwepay_admin" aria-expanded="false" aria-controls="collapseTen"><i class="fa fa-chevron-circle-down"></i> Can the funds available in TripwePay Admin be fully disbursed?</a>                               
+              </h2>
+            </div>
+            <div id="tripwepay_admin" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+              <div class="card-body"> If there is an incoming order, the admin can check periodically on the Admin page then click Order Report.</div>
+            </div>
+            </div> 
+            <div class="card">
+              <div class="card-header notification_hash" id="headingEleven">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#notification" aria-expanded="false" aria-controls="collapseEleven"><i class="fa fa-chevron-circle-down"></i> If there is an order, where is the notification?</a>                               
+                </h2>
+              </div>
+              <div id="notification" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+                <div class="card-body"> If there is an incoming order, the admin can check periodically on the Admin page then click Order Report.</div>
+              </div>
+              </div> 
+        </div>
+      </div>
+    </div>
+    <button class="icon" style="background-color: transparent;"><a href="https://api.whatsapp.com/send?phone=6281212199543&text=Hi" target='_blank'><img src="https://tripwe.com/wp-content/uploads/2022/01/wa.png" style="width: 45px; 
+      height: 48px;" alt=""></a>
+  </div>
+  <script> 
+    if (location.hash !== null && location.hash !== "") { 
+        $(location.hash + ".collapse").collapse("show"); 
+        console.log(location.hash);
+            if(location.hash == "#become_partner")
+            {
+              $(".become_partner_hash").removeClass('highlight').addClass('highlight');
+              window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+              }
+            }
+            if(location.hash == "#verification_partner")
+            {
+              $(".verification_partner_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#my_shop")
+            {
+              $(".my_shop_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#make_package")
+            {
+              $(".make_package_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#made_package")
+            {
+              $(".made_package").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#admin_package")
+            {
+              $(".admin_package_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#checkin_tripwe")
+            {
+              $(".checkin_tripwe_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#immediately_complete")
+            {
+              $(".immediately_complete_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#hold_amount")
+            {
+              $(".hold_amount_hash").removeClass('highlight').addClass('highlight');
+            }
+            if(location.hash == "#tripwepay_admin")
+            {
+              $(".tripwepay_admin_hash").removeClass('highlight').addClass('highlight');
+              window.onbeforeunload = function () {
+                window.scrollTo(9000, 9000);
+              }
+            }
+            if(location.hash == "#notification")
+            {
+              $(".notification_hash").removeClass('highlight').addClass('highlight');
+              window.onbeforeunload = function () {
+                window.scrollTo(9000, 9000);
+              }
+            }
+            
+    }
+</script>
+</body>
+</html>
